@@ -19,11 +19,13 @@ python app.py
 
 使用 sklearn 的 LinearRegression 來作為 baseline model
 雖然看起來趨勢大致相同，但實際上的預測能力很差。
+
 ![pred](https://i.imgur.com/i1xFJHv.png)
 
 現在輸入頭一個數值，要預測接下來7天，
 讓 model 根據預測值去 predict 下一數值，
 這樣誤差將會越來越大。
+
 ![pred2](https://i.imgur.com/dyFiVHJ.png)
 
 後續接進行其他 model 的測試。
@@ -69,10 +71,10 @@ class LSTM(nn.Module):
 
 但效果不是很好。
 LSTM 都只會輸出一個固定的 output。
+
 ![](https://i.imgur.com/X146Lxj.png)
 
 ![](https://i.imgur.com/bUPrzFJ.png)
-
 
 ### CNN + Transformer encoder layer
 
@@ -133,11 +135,15 @@ class CNN(nn.Module):
 ```
 
 MAR loss 如下:
+
 ![](https://i.imgur.com/Oib3eJ3.png)
 
 模型一樣都預測同一數值。
+
 ![](https://i.imgur.com/HmHx5K8.png)
+
 ![](https://i.imgur.com/Qkb2cto.png)
+
 ![](https://i.imgur.com/EqBVFZB.png)
 
 ### randomforest
@@ -145,12 +151,14 @@ MAR loss 如下:
 請參考 **forest**
 
 使用randomforest評估趨勢線，覺得效果不比linea regression好便捨棄不用。
+
 ![](https://i.imgur.com/nmCDYFB.png)
 
 ### cross_val_predict
 
 請參考 **cross_val**
 使用skl內建的cross_val進行評估，以為效果會比linear好，後來發現沒有比較沒有傷害。
+
 ![](https://i.imgur.com/1QsYBay.png)
 
 ## 問題討論
